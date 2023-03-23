@@ -75,8 +75,8 @@ void ClassicFFT::init(uint32_t sample_frequency) {
 
     for(auto i = 0u; i < display.HEIGHT; i++) {
         int n = floor(i / 4) * 4;
-        float h = 0.4 * float(n) / display.HEIGHT;
-        h = 0.666 - h;
+        float h = 0.6 * float(n) / display.HEIGHT;
+        h = 0.8 - h;
         palette[i] = RGB::from_hsv(h, 1.0f, 1.0f);
     }
 
