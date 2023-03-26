@@ -14,6 +14,7 @@ pico_sdk_init()
 include(bluetooth/bluetooth.cmake)
 include(effect/rainbow_fft.cmake)
 include(effect/classic_fft.cmake)
+include(effect/classic2_fft.cmake)
 
 if(DISPLAY_PATH AND EXISTS ${CMAKE_CURRENT_LIST_DIR}/${DISPLAY_PATH})
 include(${CMAKE_CURRENT_LIST_DIR}/${DISPLAY_PATH})
@@ -40,6 +41,7 @@ target_link_libraries(${NAME}
     display
     rainbow_fft
     classic_fft
+    classic2_fft
 )
 
 message(WARNING "Display: ${DISPLAY_NAME}")
