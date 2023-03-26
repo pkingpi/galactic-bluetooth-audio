@@ -68,7 +68,7 @@ Display display;
 FIX_FFT fft;
 RainbowFFT rainbow_fft(display, fft);
 ClassicFFT classic_fft(display, fft);
-ClassicFFT classic2_fft(display, fft);
+ClassicFFT2 classic2_fft(display, fft);
 
 std::vector<Effect *> effects;
 unsigned int current_effect = 0;
