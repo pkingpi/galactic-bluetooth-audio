@@ -1,7 +1,7 @@
 #include "lib/rgb.hpp"
 #include "effect.hpp"
 
-void ClassicFFT2::update(int16_t *buffer16, size_t sample_count) {
+void ClassicFFT::update(int16_t *buffer16, size_t sample_count) {
     int16_t* fft_array = &fft.sample_array[SAMPLES_PER_AUDIO_BUFFER * (BUFFERS_PER_FFT_SAMPLE - 1)];
     memmove(fft.sample_array, &fft.sample_array[SAMPLES_PER_AUDIO_BUFFER], (BUFFERS_PER_FFT_SAMPLE - 1) * sizeof(uint16_t));
 
@@ -66,8 +66,8 @@ void ClassicFFT2::update(int16_t *buffer16, size_t sample_count) {
     history_idx = (history_idx + 1) % HISTORY_LEN;
 }
 
-void ClassicFFT2::init(uint32_t sample_frequency) {
-    printf("ClassicFFT2: %ix%i\n", display.WIDTH, display.HEIGHT);
+void ClassicFFT::init(uint32_t sample_frequency) {
+    printf("ClassicFFT: %ix%i\n", display.WIDTH, display.HEIGHT);
 
     history_idx = 0;
 
